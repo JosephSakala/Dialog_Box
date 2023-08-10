@@ -1,127 +1,40 @@
- //import java.util.*;//needed for the scanner class
- import javax.swing.*;//needed for dialog boxes
- 
- class Employee{
+/*------------------------------------
+ *Name: Joseph Sakala                 *
+ * Unit 10                            *
+ * GUI
+ * Exercise question 1
+ * SIN: 21162450
+ * 
+ *-----------------------------------*/
 
-    //these are instance variables
-    private String employeeName;
-    private String employeeNumber;
-    private String hireDate;
 
-    //this is a constructor
-    public Employee(String employeeName, String employeeNumber, String hireDate){
-        this.employeeName = employeeName;
-        this.employeeNumber = employeeNumber;
-        this.hireDate = hireDate;
-    }
+import javax.swing.JOptionPane;//needed for the dialog boxes
 
-    //mutatas
-    public void setEmployeeNumber(String employeeNumber){
-        this.employeeNumber =employeeNumber;
 
-    }
-    public void setEmployeeName(String employeeName){
-        this.employeeName = employeeName;
-
-    }
-    public void setHireDate(String hireDate){
-        this.hireDate = hireDate;
-
-    }
-
-    //Accessors
-    public String getEmployeeName(){
-        return employeeName;
-    }
-    
-    public String getEmployeeNumber(){
-        return employeeNumber;
-
-    }
-    public String getHireDate(){
-        return hireDate;
-    }
-
-}
-
-class ProductionWorker extends Employee{
-
-    //instance variables
-    private int shift;
-    private double HourlyPayRate;
-
-    public ProductionWorker(String employeeName, String employeeNumber, String hireDate, int shift, double HourlyPayRate){
-        super(employeeName, employeeNumber, hireDate);
-        this.HourlyPayRate = HourlyPayRate;
-        this.shift = shift;
-    }
-
-    //mutatas
-    public void setShift(int shift){
-        this.shift = shift;  
-
-    }
-    public void setHourlyPayRate(double HourlyPayRate){
-        this.HourlyPayRate = HourlyPayRate;
-        
-    }
-
-    //Accessors
-    public int getShift(){
-        return shift;
-
-    }
-    public double getHourlyPayRate(){
-        return HourlyPayRate;
-    }
-    
-}
-
-public class TestDriver{
+public class DialogEx{
 
     public static void main(String []args){
 
-        //Scanner UserInput = new Scanner(System.in);//creating a scanner object = 'userInput' to read user input
+        Employeee Obj = new Employeee(null, 0, 0);
+        String Name;
 
-        //creating an object that will access both Employee's class and ProductionWorker
-        ProductionWorker Employees = new ProductionWorker(null, null, null, 0, 0);
-
-        String name = " ";//Employee name
-        String title = "Employee details";//dialog box title
-        String eNumber = " ";//Employee number
-
-       name = JOptionPane.showInputDialog(null,"Enter your full names",title, JOptionPane.INFORMATION_MESSAGE);
-        Employees.setEmployeeName(name);
-
-        eNumber = JOptionPane.showInputDialog(null, "Enter your Social Security number", title, 0);
-        Employees.setEmployeeName(eNumber);
-
-        String date;
-        date = JOptionPane.showInputDialog(null, "Date employee was hired", title, 0);
-        Employees.setHireDate(date);
+       // Name = JOptionPane.showInputDialog("Enter name");
 
 
-        JOptionPane.showMessageDialog(null,Employees.getEmployeeName());
+      //  Obj.setName(Name);
 
+        double firstNumber = 0.0, secondNumber = 0.0, Product = 0.0;
 
-       /*int num1 = 0, num2 = 0, sum = 0;
-        
-       for(int i = 0; i<3;i++){
+        firstNumber = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the first number"));
+        secondNumber =  Double.parseDouble(JOptionPane.showInputDialog("Enter the second number"));
 
-        num1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter num1"));
-        num2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter num2"));
+        Product = firstNumber*secondNumber;
 
-         sum = num1 + num2;
+        JOptionPane.showMessageDialog(null, "Your product is "+ Product);
 
-         JOptionPane.showMessageDialog(null,sum);
-
-
-       }
-       */
-
-
-
+    
 
     }
-    
 }
+
+
